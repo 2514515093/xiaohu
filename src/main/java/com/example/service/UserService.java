@@ -1,9 +1,14 @@
 package com.example.service;
 
+import com.example.entity.Student;
 import com.example.entity.User;
 import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author:0xOO
@@ -13,5 +18,9 @@ import org.springframework.stereotype.Service;
 
 public interface UserService {
 
-    public User Sel(int id);
+    User Sel(int id);
+
+    List<Student> selectAll();
+
+    void downExcel(HttpServletResponse response) throws Exception;
 }

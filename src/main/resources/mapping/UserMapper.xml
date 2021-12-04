@@ -13,6 +13,13 @@
         select * from user where id = #{id}
     </select>
 
+    <select id="selectAll" resultType="map">
+        select
+               u.id as uid ,u.username as username,u.password as password,u.realName as realname,
+               s.id as id,s.sname as name,s.age as age,s.sex as sex,s.cj as cj,s.class_id as classId
+               from `user` u left join student s on u.id=s.id
+    </select>
+
 
     <!--<insert id="insert" parameterType="com.example.entity.User">
         insert into User (userId, userName, phone,
